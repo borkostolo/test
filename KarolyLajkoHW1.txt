@@ -1,0 +1,40 @@
+echo " Question One "
+mkdir test
+cd test
+git init
+vim a.txt
+git add a.txt
+git status
+git commit -m "add a.txt file"
+
+echo "Question Two"
+git status
+mkdir subtest
+cd subtest
+vim a1.txt
+vim a2.txt
+cd ..
+git add subset/*
+git status
+git commit -m "adding subset dir and a1 a2 files"
+git show
+git log --oneline
+git reflog
+echo "Quesiton Three"
+git remote add origin https://github.com/borkostolo/test.git
+git push origin master
+vim a.txt
+git add .
+git diff
+git commit -m "added new line to a.txt"
+echo "Question Four"
+vim subtest/a1.txt
+git add .
+git reset --hard
+vim subtest/a1.txt
+git add .
+git commit -m "added a new line again to a1"
+git reset
+git status
+git reset --hard
+echo "That is all"
